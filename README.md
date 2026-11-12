@@ -25,3 +25,15 @@ The CSCID application consumes these styles/components. CSS-ID changes may updat
 - `styles/tokens.css`: brand design tokens.
 - `styles/global.css`: base styles and reusable primitives.
 - `docs/component-guidelines.md`: implementation rules.
+
+
+## Centralized application stylesheets
+
+All application-level CSS is maintained in this repository. Applications should load these shared files rather than maintaining independent copies.
+
+- `styles/tokens.css`: shared design tokens.
+- `styles/global.css`: shared reset, typography, and reusable primitives.
+- `styles/site-production.css`: CSCID production site stylesheet, migrated from `CSCID2004/CSCID/src/app/globals.css`.
+- `styles/edit-workspace.css`: EDIT workspace stylesheet, migrated from `CSCID2004/EDIT/app/globals.css`.
+
+Keep application logic and content in their application repositories. When migrating an application, first verify the shared stylesheet loads correctly in preview before removing its local CSS implementation.
